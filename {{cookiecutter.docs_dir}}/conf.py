@@ -95,8 +95,6 @@ copybutton_prompt_is_regexp = True
 nbsphinx_timeout = 600
 nbsphinx_execute = "always"
 nbsphinx_prolog = """
-{% set docname = env.doc2path(env.docname, base=None) %}
-
 """
 
 autosummary_generate = True
