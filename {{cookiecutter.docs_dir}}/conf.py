@@ -8,17 +8,14 @@
 # serve to show the default.
 
 
+import os
+import sys
 import datetime
 import inspect
-import os
 import subprocess
-import sys
 from contextlib import suppress
 
 import sphinx_autosummary_accessors
-
-import os
-import sys
 
 # If creating this for a module
 sys.path.insert(0, os.path.abspath('..'))
