@@ -71,7 +71,7 @@ livehtml:
 	# To only watch and build this dir
 	# @echo "$(SPHINXATUOBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html"
 	# You can watch other directories by adding --watch
-	$(SPHINXATUOBUILD) --watch ../{{cookicutter.project_slug}} -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
+	$(SPHINXATUOBUILD) --watch ../{{cookiecutter.project_slug}} -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
 
 .PHONY: dirhtml
 dirhtml:
