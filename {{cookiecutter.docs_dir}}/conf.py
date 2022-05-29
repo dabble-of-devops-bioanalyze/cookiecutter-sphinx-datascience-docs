@@ -17,7 +17,6 @@ from contextlib import suppress
 
 import sphinx_autosummary_accessors
 
-import xarray
 import os
 import sys
 
@@ -178,8 +177,8 @@ templates_path = ["_templates", sphinx_autosummary_accessors.templates_path]
 master_doc = "index"
 
 # General information about the project.
-project = "{{cookiecutter.project_slug}}"
-copyright = "2022-%s, {{cookiecutter.project_slug}}" % datetime.datetime.now().year
+project = "{{cookiecutter.project_name}}"
+copyright = "2022-%s, {{cookiecutter.project_name}}" % datetime.datetime.now().year
 
 version = "0.0.1"
 # The full version, including alpha/beta/rc tags.
@@ -205,8 +204,8 @@ html_theme = "sphinx_book_theme"
 html_title = ""
 
 html_context = {
-    "github_user": "pydata",
-    "github_repo": "xarray",
+    "github_user": "my_github_user",
+    "github_repo": "my_github_repo",
     "github_version": "main",
     "doc_path": "doc",
 }
@@ -217,7 +216,7 @@ html_context = {
 html_theme_options = dict(
     # analytics_id=''  this is configured in rtfd.io
     # canonical_url="",
-    repository_url="https://github.com/pydata/xarray",
+    repository_url="",
     repository_branch="main",
     path_to_docs="doc",
     use_edit_page_button=True,
@@ -231,7 +230,7 @@ html_theme_options = dict(
 
 # The name of an image file (relative to this directory) to place at the top
 # of the sidebar.
-html_logo = "_static/dataset-diagram-logo.png"
+html_logo = "_static/logo.png"
 
 # The name of an image file (within the static path) to use as favicon of the
 # docs.  This file should be a Windows icon file (.ico) being 16x16 or 32x32
@@ -244,14 +243,15 @@ html_favicon = "_static/favicon.ico"
 html_static_path = ["_static"]
 html_css_files = ["style.css"]
 
+# Example from xarray:
 # configuration for sphinxext.opengraph
-ogp_site_url = "https://docs.xarray.dev/en/latest/"
-ogp_image = "https://docs.xarray.dev/en/stable/_static/dataset-diagram-logo.png"
-ogp_custom_meta_tags = [
-    '<meta name="twitter:card" content="summary_large_image" />',
-    '<meta property="twitter:site" content="@xarray_dev" />',
-    '<meta name="image" property="og:image" content="https://docs.xarray.dev/en/stable/_static/dataset-diagram-logo.png" />',
-]
+# ogp_site_url = "https://docs.xarray.dev/en/latest/"
+# ogp_image = "https://docs.xarray.dev/en/stable/_static/dataset-diagram-logo.png"
+# ogp_custom_meta_tags = [
+#     '<meta name="twitter:card" content="summary_large_image" />',
+#     '<meta property="twitter:site" content="@xarray_dev" />',
+#     '<meta name="image" property="og:image" content="https://docs.xarray.dev/en/stable/_static/dataset-diagram-logo.png" />',
+# ]
 
 # Redirects for pages that were moved to new locations
 
@@ -348,16 +348,6 @@ def linkcode_resolve(domain, info):
         linespec = f"#L{lineno}-L{lineno + len(source) - 1}"
     else:
         linespec = ""
-
-    fn = os.path.relpath(fn, start=os.path.dirname(xarray.__file__))
-
-    if "+" in xarray.__version__:
-        return f"https://github.com/pydata/xarray/blob/main/xarray/{fn}{linespec}"
-    else:
-        return (
-            f"https://github.com/pydata/xarray/blob/"
-            f"v{xarray.__version__}/xarray/{fn}{linespec}"
-        )
 
 
 def html_page_context(app, pagename, templatename, context, doctree):
