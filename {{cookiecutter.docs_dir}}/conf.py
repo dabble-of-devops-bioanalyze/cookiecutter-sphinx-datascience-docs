@@ -76,6 +76,7 @@ extensions = [
     "sphinx_autosummary_accessors",
     "sphinx.ext.linkcode",
     "sphinx_panels",
+    "myst_parser",
     "sphinxext.opengraph",
     "sphinx_copybutton",
     "sphinxext.rediraffe",
@@ -199,8 +200,8 @@ html_theme = "sphinx_book_theme"
 html_title = ""
 
 html_context = {
-    "github_user": "my_github_user",
-    "github_repo": "my_github_repo",
+    "github_user": "{{cookiecutter.github_user}}",
+    "github_repo": "{{cookiecutter.github_repo}}",
     "github_version": "main",
     "doc_path": "doc",
 }
@@ -211,7 +212,7 @@ html_context = {
 html_theme_options = dict(
     # analytics_id=''  this is configured in rtfd.io
     # canonical_url="",
-    repository_url="",
+    repository_url="https://github.com/my-github-repo",
     repository_branch="main",
     path_to_docs="doc",
     use_edit_page_button=True,
@@ -251,26 +252,6 @@ html_css_files = ["style.css"]
 # Redirects for pages that were moved to new locations
 
 rediraffe_redirects = {
-    # "terminology.rst": "user-guide/terminology.rst",
-    # "data-structures.rst": "user-guide/data-structures.rst",
-    # "indexing.rst": "user-guide/indexing.rst",
-    # "interpolation.rst": "user-guide/interpolation.rst",
-    # "computation.rst": "user-guide/computation.rst",
-    # "groupby.rst": "user-guide/groupby.rst",
-    # "reshaping.rst": "user-guide/reshaping.rst",
-    # "combining.rst": "user-guide/combining.rst",
-    # "time-series.rst": "user-guide/time-series.rst",
-    # "weather-climate.rst": "user-guide/weather-climate.rst",
-    # "pandas.rst": "user-guide/pandas.rst",
-    # "io.rst": "user-guide/io.rst",
-    # "dask.rst": "user-guide/dask.rst",
-    # "plotting.rst": "user-guide/plotting.rst",
-    # "duckarrays.rst": "user-guide/duckarrays.rst",
-    # "related-projects.rst": "ecosystem.rst",
-    # "faq.rst": "getting-started-guide/faq.rst",
-    # "why-xarray.rst": "getting-started-guide/why-xarray.rst",
-    # "installing.rst": "getting-started-guide/installing.rst",
-    # "quick-overview.rst": "getting-started-guide/quick-overview.rst",
 }
 
 # Sometimes the savefig directory doesn't exist and needs to be created
@@ -287,7 +268,7 @@ if not os.path.exists(ipython_savefig_dir):
 html_last_updated_fmt = today_fmt
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = "xarraydoc"
+htmlhelp_basename = "docs"
 
 # Example configuration for intersphinx: refer to the Python standard library.
 intersphinx_mapping = {
@@ -302,6 +283,7 @@ intersphinx_mapping = {
     "cftime": ("https://unidata.github.io/cftime", None),
     "rasterio": ("https://rasterio.readthedocs.io/en/latest", None),
     "sparse": ("https://sparse.pydata.org/en/latest/", None),
+    "xarray": ("https://docs.xarray.dev/en/stable/", None)
 }
 
 

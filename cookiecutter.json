@@ -1,5 +1,9 @@
 {
   "project_name": "",
-  "docs_dir": "docs",
-  "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}"
+  "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
+  "docs_dir": "{{ cookiecutter.project_slug }}",
+  "full_name": "Audrey Roy Greenfeld",
+  "email": "audreyr@example.com",
+  "github_username": "audreyr",
+  "github_repo": "{{ cookiecutter.project_slug.replace('_', '-' }}"
 }
