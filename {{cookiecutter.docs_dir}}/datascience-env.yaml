@@ -41,5 +41,6 @@ dependencies:
       - sphinxext-opengraph
       - sphinx-autobuild
       - sphinx-click
-      - prefect>=2.0b
+      - prefect==1
+      - prefect[dev]
       - devtools[pygments]
