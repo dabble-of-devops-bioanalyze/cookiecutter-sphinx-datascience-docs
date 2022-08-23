@@ -200,7 +200,7 @@ html_theme = "sphinx_book_theme"
 html_title = ""
 
 html_context = {
-    "github_user": "{{cookiecutter.github_user}}",
+    "github_user": "{{cookiecutter.github_username}}",
     "github_repo": "{{cookiecutter.github_repo}}",
     "github_version": "main",
     "doc_path": "doc",

@@ -1,11 +1,6 @@
-.. highlight:: shell
+## Installation
 
-============
-Installation
-============
-
-Stable release
---------------
+### Stable release
 
 *Your release docs here.*
 

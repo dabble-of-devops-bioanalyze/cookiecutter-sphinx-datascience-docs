@@ -1,4 +1,4 @@
-Welcome to {{cookiecutter.project_name}}'s documentation!
+Documentation
 ================================================
 
 .. toctree::
@@ -10,7 +10,6 @@ Welcome to {{cookiecutter.project_name}}'s documentation!
    quickstart
    usage
    contributing
-   history
 
 Indices and tables
 ==================

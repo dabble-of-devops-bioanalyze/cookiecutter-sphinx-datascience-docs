@@ -5,5 +5,7 @@
   "full_name": "Audrey Roy Greenfeld",
   "email": "audreyr@example.com",
   "github_username": "audreyr",
-  "github_repo": "{{ cookiecutter.project_slug.replace('_', '-' }}"
+  "github_repo": "{{ cookiecutter.project_slug.replace('_', '-') }}",
+  "_copy_without_render": [
+  ]
 }
